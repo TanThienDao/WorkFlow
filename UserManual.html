@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>User Manual Page</title>
+</head>
+<body>
+    <p style="text-align:left">
+        Name: Tan Thien Dao<br />
+        ASU ID: 1214652569 <br />
+        CSE 446 Assigment 3 Workflow Project<br />
+        User Mannual Tase 4.
+    </p>
+    <h1 style="text-align:center">Introduction</h1>
+    
+        <h3 style="text-align:center">Welcome to my Accound Service. </h3>
+        <p>
+            <h4><b>Introduction to the application</b></h4>
+            The service has 3 function create an accound and another function for login. The service using ASU encrypt and decrypt as secound web service to encrypt and decrypt password.<br />
+            Accound Function will require user to enter user name and password, it will print out the username and passwrd enccrypted for check purposr. Login fuction will check the username if it exit, <br />
+            and check for the password if user enter it correct.<br />
+            The Last service is Newforcus, the service will print out all the new for the topic you type"Need to separate topic by comma!"<br />
+            Asu Api : <a href="http://neptune.fulton.ad.asu.edu/WSRepository/Services/EncryptionWcf/Service.svc">http://neptune.fulton.ad.asu.edu/WSRepository/Services/EncryptionWcf/Service.svc</a> <br />
+
+        </p>
+    <hr />
+        <p>
+            <h4><b>Description of the Interface</b></h4>
+            The Console application interface will fist aske the user if they want to create an accound or login. Create an accound click 1 and login click 2.<br />
+            Service Accound: the service will aske for username and password from the user and used ASU API to encrypt the password and store then in the Json file.<br />
+            If the accound already exit, it will send our this message, and if accound create message success will sent out.<br />
+            Service Login: the service will aske user to enter thier user name and password. then it enctypt the password to it can check with the encrypted passwaord in Json file. <br />
+            After that, the service will scan throuh the list in Json to check if it valid useranme and password.If Username correct but password wrong it will sent out message say password wrong or<br />
+            or if the username does not in the list it will sent out message invalid message, if password wrong service will sent out invalid message. <br />
+            NewForcus: Service will take a string of topic and convert it to a string array for input to the service then out put all the new<br />
+
+        </p>
+    <hr />
+    <div>
+        <h4><b>Diagram Illustrating the Application</b></h4>
+        <p>I. Below is the diagram that whow logic of the application </p>
+        <img src="Diagram.PNG" />
+        <p>II. Belllow is the workflow application</p>
+        <p>1) Flowchard </p>
+        <img src="workflowStart.PNG" />
+        <p>2) while Loop in side the flow chard </p>
+        <img src="whileWF.PNG" />
+        <p>3) Try catch work flow</p>
+        <img src="trycatchwf.PNG" />
+        <p>4) Accound Service Implement workflow</p>
+        <img src="AcountServiceWF.PNG" />
+        <p>5) Login Service implement workflow</p>
+        <img src="LoginServicewf.PNG" />
+        <p>6) While loop to make program run again work flow</p>
+        <img src="Conditionforagain.PNG" />
+        <p>7) Code activity use in the acound service and login service</p>
+        <img src="CodeactivitySUm.PNG" />
+        <img src="CodeactivityA.PNG" />
+        <img src="CodeActivityL.PNG" />
+        <p>8) Work flow for New forcus Service</p>
+        <img src="NewForcusWF.PNG" />
+
+    </div>
+    <br /><hr />
+    <div>
+        <h4><b>IV. Testing Instroduction</b></h4>
+        <p>1) Testing Create Account</p>
+        <div>
+            <p>Create Accound work test case</p>
+            <img src="CheckServicework.PNG" />
+            <p>Accound duplicate test case </p>
+            <img src="Createcheckduplicateusername.PNG" />
+        </div>
+        <p>2) Testing Login Account</p>
+        <div>
+            <p>Login work test case</p>
+            <img src="LoginServicework.PNG" />
+            <p>Login error test case</p>
+            <img src="LoginUserwrong.PNG" />
+            
+        </div>
+        <div>
+            <p>3) Testing NewForcus Service</p>
+            <img src="NewforcusServiceWork.PNG" />
+        </div>
+
+    </div>
+    
+
+
+    
+</body>
+</html>

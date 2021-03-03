@@ -1,0 +1,3 @@
+obj\Debug\_Service3_NewForcus.g.cs
+obj\Debug\MyServiceActivity.g.cs
+obj\Debug\Service3_NewForcus_MyServiceActivity_BeforeInitializeComponentHelper.cs

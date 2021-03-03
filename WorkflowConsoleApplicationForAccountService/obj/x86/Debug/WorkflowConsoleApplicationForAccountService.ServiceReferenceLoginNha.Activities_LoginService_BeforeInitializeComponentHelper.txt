@@ -1,0 +1,2 @@
+WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha.IService.LoginService.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

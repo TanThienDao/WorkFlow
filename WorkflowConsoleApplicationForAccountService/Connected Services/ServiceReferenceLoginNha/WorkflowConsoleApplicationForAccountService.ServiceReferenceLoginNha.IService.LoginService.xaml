@@ -1,0 +1,85 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha.Activities.LoginService" this:LoginService.EndpointConfigurationName="BasicHttpBinding_IService1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:this="clr-namespace:WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha.Activities"
+ xmlns:ws="clr-namespace:WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha;assembly=WorkflowConsoleApplicationForAccountService, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:ws1="clr-namespace:WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha;assembly=WorkflowConsoleApplicationForAccountService"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>BasicHttpBinding_IService1</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="Input_Username" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="Input_Password" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="OutPut_ResultLogin" Type="OutArgument(s:Boolean[])" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/LoginService" OperationName="LoginService" ServiceContractName="p:IService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="ws1:LoginServiceRequest">[New WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha.LoginServiceRequest() With { .Input_Username = Input_Username, .Input_Password = Input_Password }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/LoginServiceResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="ws1:LoginServiceResponse">
+          <VariableReference x:TypeArguments="ws1:LoginServiceResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="ws1:LoginServiceResponse" x:Name="__ReferenceID1" Name="tempResult_a04ee37fa1b249f0b6c9b78c4cfb9dc5" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:Boolean[]">[OutPut_ResultLogin]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:Boolean[]">[tempResult_a04ee37fa1b249f0b6c9b78c4cfb9dc5.OutPut_ResultLogin]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d9wBRDpcQyMgcHJvZ3JhbVxjc2U0NDVfUHJvamVjdDJfYTNfTmV3XFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uRm9yQWNjb3VudFNlcnZpY2VcQ29ubmVjdGVkIFNlcnZpY2VzXFNlcnZpY2VSZWZlcmVuY2VMb2dpbk5oYVxXb3JrZmxvd0NvbnNvbGVBcHBsaWNhdGlvbkZvckFjY291bnRTZXJ2aWNlLlNlcnZpY2VSZWZlcmVuY2VMb2dpbk5oYS5JU2VydmljZS5Mb2dpblNlcnZpY2UueGFtbAkmA1QOAgEBKwU/DwIBCkAFShcCAQdLBVIOAgECOj866wECAQwwDzQfAgELQwtHHwIBCVAzUHMCAQVNNE1IAgED</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>

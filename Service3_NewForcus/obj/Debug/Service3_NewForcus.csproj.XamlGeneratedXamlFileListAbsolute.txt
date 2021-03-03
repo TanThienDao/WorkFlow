@@ -1,0 +1,2 @@
+obj\Debug\MyServiceActivity.g.xaml
+obj\Debug\Service3_NewForcus_MyServiceActivity_BeforeInitializeComponentHelper.txt

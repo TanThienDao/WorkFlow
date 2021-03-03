@@ -1,0 +1,7 @@
+D:\C# program\cse445_Project2_a3_New\testing\bin\Debug\testing.exe.config
+D:\C# program\cse445_Project2_a3_New\testing\bin\Debug\testing.exe
+D:\C# program\cse445_Project2_a3_New\testing\bin\Debug\testing.pdb
+D:\C# program\cse445_Project2_a3_New\testing\obj\Debug\testing.csprojAssemblyReference.cache
+D:\C# program\cse445_Project2_a3_New\testing\obj\Debug\testing.csproj.CoreCompileInputs.cache
+D:\C# program\cse445_Project2_a3_New\testing\obj\Debug\testing.exe
+D:\C# program\cse445_Project2_a3_New\testing\obj\Debug\testing.pdb

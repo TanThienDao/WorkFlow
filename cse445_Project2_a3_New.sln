@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cse445_Project2_a3_New", "cse445_Project2_a3_New\cse445_Project2_a3_New.csproj", "{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testing", "testing\testing.csproj", "{2F6324D2-3318-4E03-8CC2-80A8321D0F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowConsoleApplicationForAccountService", "WorkflowConsoleApplicationForAccountService\WorkflowConsoleApplicationForAccountService.csproj", "{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A} = {DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserManual", "UserManual", "{420E0CA4-8A58-43D8-A0F9-F770308B859C}"
+	ProjectSection(SolutionItems) = preProject
+		AcountServiceWF.PNG = AcountServiceWF.PNG
+		Argument.PNG = Argument.PNG
+		CheckServicework.PNG = CheckServicework.PNG
+		CodeactivityA.PNG = CodeactivityA.PNG
+		CodeActivityL.PNG = CodeActivityL.PNG
+		CodeactivitySUm.PNG = CodeactivitySUm.PNG
+		Conditionforagain.PNG = Conditionforagain.PNG
+		Createcheckduplicateusername.PNG = Createcheckduplicateusername.PNG
+		Diagram.PNG = Diagram.PNG
+		JsonFile.PNG = JsonFile.PNG
+		loginPasswordIncorrect.PNG = loginPasswordIncorrect.PNG
+		LoginServicewf.PNG = LoginServicewf.PNG
+		LoginServicework.PNG = LoginServicework.PNG
+		LoginUserwrong.PNG = LoginUserwrong.PNG
+		NewforcusServiceWork.PNG = NewforcusServiceWork.PNG
+		NewForcusWF.PNG = NewForcusWF.PNG
+		trycatchwf.PNG = trycatchwf.PNG
+		UserManual.html = UserManual.html
+		Varaiable.PNG = Varaiable.PNG
+		whileWF.PNG = whileWF.PNG
+		workflowStart.PNG = workflowStart.PNG
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{888B4260-504C-498B-9BF9-198AC508E1D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service3_NewForcus", "Service3_NewForcus\Service3_NewForcus.csproj", "{DB506F58-8554-4BE2-B7BD-E62A4417393B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Debug|x86.Build.0 = Debug|Any CPU
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Release|x86.ActiveCfg = Release|Any CPU
+		{DD7A11E4-CE2C-4446-8986-27C39FBB4F8A}.Release|x86.Build.0 = Release|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Debug|x86.Build.0 = Debug|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Release|x86.ActiveCfg = Release|Any CPU
+		{2F6324D2-3318-4E03-8CC2-80A8321D0F24}.Release|x86.Build.0 = Release|Any CPU
+		{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}.Debug|Any CPU.Build.0 = Debug|x86
+		{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}.Debug|x86.ActiveCfg = Debug|x86
+		{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}.Debug|x86.Build.0 = Debug|x86
+		{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}.Release|Any CPU.ActiveCfg = Release|x86
+		{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}.Release|x86.ActiveCfg = Release|x86
+		{3C8C7147-9D3D-4FEE-8479-42823CDA63F1}.Release|x86.Build.0 = Release|x86
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Debug|x86.Build.0 = Debug|Any CPU
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Release|x86.ActiveCfg = Release|Any CPU
+		{DB506F58-8554-4BE2-B7BD-E62A4417393B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ACDBE44-ED52-44D1-B7EC-0892E258A20B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:NewForcusService this:EndpointConfigurationName="BasicHttpBinding_IService3" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:this="clr-namespace:WorkflowConsoleApplicationForAccountService.NewforcusServiceNha.Activities;assembly=WorkflowConsoleApplicationForAccountService" xmlns:wn="clr-namespace:WorkflowConsoleApplicationForAccountService.NewforcusServiceNha;assembly=WorkflowConsoleApplicationForAccountService, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:wn1="clr-namespace:WorkflowConsoleApplicationForAccountService.NewforcusServiceNha;assembly=WorkflowConsoleApplicationForAccountService" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:NewForcusService.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </Sequence.Variables>
+      <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/NewForcusService" OperationName="NewForcusService" ServiceContractName="p:IService">
+        <p1:Send.CorrelationInitializers>
+          <p1:RequestReplyCorrelationInitializer>
+            <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+              <InArgument x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+          </p1:RequestReplyCorrelationInitializer>
+        </p1:Send.CorrelationInitializers>
+        <p1:SendMessageContent>
+          <InArgument x:TypeArguments="wn1:NewForcusServiceRequest">[New WorkflowConsoleApplicationForAccountService.NewforcusServiceNha.NewForcusServiceRequest() With { .Input_topic = Input_topic }]</InArgument>
+        </p1:SendMessageContent>
+        <p1:Send.EndpointConfigurationName>
+          <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+        </p1:Send.EndpointConfigurationName>
+      </p1:Send>
+      <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/NewForcusServiceResponse">
+        <p1:ReceiveMessageContent>
+          <OutArgument x:TypeArguments="wn1:NewForcusServiceResponse">
+            <VariableReference x:TypeArguments="wn1:NewForcusServiceResponse">
+              <VariableReference.Variable>
+                <Variable x:TypeArguments="wn1:NewForcusServiceResponse" x:Name="__ReferenceID1" Name="tempResult_dc095c895eb14f0fa7912ea49bcee5e1" />
+              </VariableReference.Variable>
+            </VariableReference>
+          </OutArgument>
+        </p1:ReceiveMessageContent>
+      </p1:ReceiveReply>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[Output_Result]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[tempResult_dc095c895eb14f0fa7912ea49bcee5e1.Output_Result]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>9xSZUOX9yDvL9y7ZBoQMm5bcnc5g5tYBRDpcQyMgcHJvZ3JhbVxjc2U0NDVfUHJvamVjdDJfYTNfTmV3XFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uRm9yQWNjb3VudFNlcnZpY2VcQ29ubmVjdGVkIFNlcnZpY2VzXE5ld2ZvcmN1c1NlcnZpY2VOaGFcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb25Gb3JBY2NvdW50U2VydmljZS5OZXdmb3JjdXNTZXJ2aWNlTmhhLklTZXJ2aWNlLk5ld0ZvcmN1c1NlcnZpY2UueGFtbAkhA08OAgEBJgU6DwIBCjsFRRcCAQdGBU0OAgECNUM1xgECAQwrDy8fAgELPgtCHwIBCUsyS20CAQVIM0hCAgED</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </this:NewForcusService.Implementation>
+</this:NewForcusService>

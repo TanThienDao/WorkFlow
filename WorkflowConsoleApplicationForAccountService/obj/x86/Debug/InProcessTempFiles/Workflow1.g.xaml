@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<local:Workflow1 xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:local="clr-namespace:WorkflowConsoleApplicationForAccountService;assembly=WorkflowConsoleApplicationForAccountService" xmlns:local1="clr-namespace:WorkflowConsoleApplicationForAccountService.Crypto.Activities;assembly=WorkflowConsoleApplicationForAccountService" xmlns:local2="clr-namespace:WorkflowConsoleApplicationForAccountService.AccountServiceNha.Activities;assembly=WorkflowConsoleApplicationForAccountService" xmlns:local3="clr-namespace:WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha.Activities;assembly=WorkflowConsoleApplicationForAccountService" xmlns:local4="clr-namespace:WorkflowConsoleApplicationForAccountService.NewforcusServiceNha.Activities;assembly=WorkflowConsoleApplicationForAccountService" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:wa="clr-namespace:WorkflowConsoleApplicationForAccountService.AccountServiceNha;assembly=WorkflowConsoleApplicationForAccountService" xmlns:wc="clr-namespace:WorkflowConsoleApplicationForAccountService.Crypto;assembly=WorkflowConsoleApplicationForAccountService" xmlns:wn="clr-namespace:WorkflowConsoleApplicationForAccountService.NewforcusServiceNha;assembly=WorkflowConsoleApplicationForAccountService" xmlns:ws="clr-namespace:WorkflowConsoleApplicationForAccountService.ServiceReferenceLoginNha;assembly=WorkflowConsoleApplicationForAccountService" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WorkflowConsoleApplicationForAccountService</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <local:Workflow1.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Default="True" Name="againWhile" />
+        <Variable x:TypeArguments="x:String" Default="User Name" Name="defaultName" />
+      </Sequence.Variables>
+      <WriteLine Text="Welcome to Accound Service." />
+      <local:CodeActivityIINWorkflowApp>
+        <local:CodeActivityIINWorkflowApp.defaultName>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">defaultName</mca:CSharpValue>
+          </InArgument>
+        </local:CodeActivityIINWorkflowApp.defaultName>
+        <local:CodeActivityIINWorkflowApp.enterName>
+          <OutArgument x:TypeArguments="x:String">
+            <mca:CSharpReference x:TypeArguments="x:String">defaultName</mca:CSharpReference>
+          </OutArgument>
+        </local:CodeActivityIINWorkflowApp.enterName>
+      </local:CodeActivityIINWorkflowApp>
+      <WriteLine>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">defaultName + " Today's date is " + Convert.ToString(DateTime.Now);</mca:CSharpValue>
+        </InArgument>
+      </WriteLine>
+      <Flowchart>
+        <Flowchart.Variables>
+          <Variable x:TypeArguments="x:Int32" Name="againWhileString" />
+          <Variable x:TypeArguments="x:Int32" Name="CreateOrLogin" />
+        </Flowchart.Variables>
+        <Flowchart.StartNode>
+          <FlowStep x:Name="__ReferenceID0">
+            <While>
+              <While.Condition>
+                <mca:CSharpValue x:TypeArguments="x:Boolean">againWhile</mca:CSharpValue>
+              </While.Condition>
+              <Sequence>
+                <WriteLine Text="Service Start" />
+                <TryCatch>
+                  <TryCatch.Try>
+                    <Sequence>
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Decimal" Name="variable1" />
+                      </Sequence.Variables>
+                      <WriteLine Text="PLease enter 1 for Create and 2 for Login and 3 for Newforcus" />
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32">CreateOrLogin</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">Int32.Parse(Console.ReadLine())</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <If>
+                        <If.Condition>
+                          <InArgument x:TypeArguments="x:Boolean">
+                            <mca:CSharpValue x:TypeArguments="x:Boolean">CreateOrLogin ==1 || CreateOrLogin ==2 || CreateOrLogin ==3</mca:CSharpValue>
+                          </InArgument>
+                        </If.Condition>
+                        <If.Then>
+                          <Switch x:TypeArguments="x:Int32">
+                            <Switch.Default>
+                              <WriteLine Text="why default in try catch" />
+                            </Switch.Default>
+                            <Switch.Expression>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">CreateOrLogin</mca:CSharpValue>
+                              </InArgument>
+                            </Switch.Expression>
+                            <Sequence x:Key="1">
+                              <WriteLine Text="Account Service " />
+                              <WriteLine Text="Please enter your User name : " />
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">UserNameArgument</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine()</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <WriteLine Text="Please enter your Password" />
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">ToEncrypt</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine()</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local1:Encrypt mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+                                <local1:Encrypt.EncryptResult>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">Encrypted</mca:CSharpReference>
+                                  </OutArgument>
+                                </local1:Encrypt.EncryptResult>
+                                <local1:Encrypt.text>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">ToEncrypt</mca:CSharpValue>
+                                  </InArgument>
+                                </local1:Encrypt.text>
+                              </local1:Encrypt>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">PasswordArgument</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Encrypted</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local2:AccountService mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+                                <local2:AccountService.OutResult>
+                                  <OutArgument x:TypeArguments="x:Boolean">
+                                    <mca:CSharpReference x:TypeArguments="x:Boolean">ResultCreate</mca:CSharpReference>
+                                  </OutArgument>
+                                </local2:AccountService.OutResult>
+                                <local2:AccountService.input_Username>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">UserNameArgument</mca:CSharpValue>
+                                  </InArgument>
+                                </local2:AccountService.input_Username>
+                                <local2:AccountService.intput_Password>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">PasswordArgument</mca:CSharpValue>
+                                  </InArgument>
+                                </local2:AccountService.intput_Password>
+                              </local2:AccountService>
+                              <If>
+                                <If.Condition>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <mca:CSharpValue x:TypeArguments="x:Boolean">ResultCreate == true</mca:CSharpValue>
+                                  </InArgument>
+                                </If.Condition>
+                                <If.Then>
+                                  <WriteLine>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <mca:CSharpValue x:TypeArguments="x:String">"Account "+ UserNameArgument +" " + "Password" + PasswordArgument</mca:CSharpValue>
+                                    </InArgument>
+                                  </WriteLine>
+                                </If.Then>
+                                <If.Else>
+                                  <WriteLine Text="Account alreadt exits" />
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                            <Sequence x:Key="2">
+                              <WriteLine Text="Login Service" />
+                              <WriteLine Text="Please enter your User name: " />
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">UserNameArgument</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine()</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <WriteLine Text="Please enter your login password" />
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">ToEncrypt</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine()</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local1:Encrypt mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+                                <local1:Encrypt.EncryptResult>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">Encrypted</mca:CSharpReference>
+                                  </OutArgument>
+                                </local1:Encrypt.EncryptResult>
+                                <local1:Encrypt.text>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">ToEncrypt</mca:CSharpValue>
+                                  </InArgument>
+                                </local1:Encrypt.text>
+                              </local1:Encrypt>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">PasswordArgument</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Encrypted</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local3:LoginService mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+                                <local3:LoginService.Input_Password>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">PasswordArgument</mca:CSharpValue>
+                                  </InArgument>
+                                </local3:LoginService.Input_Password>
+                                <local3:LoginService.Input_Username>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">UserNameArgument</mca:CSharpValue>
+                                  </InArgument>
+                                </local3:LoginService.Input_Username>
+                                <local3:LoginService.OutPut_ResultLogin>
+                                  <OutArgument x:TypeArguments="s:Boolean[]">
+                                    <mca:CSharpReference x:TypeArguments="s:Boolean[]">ResulltLogin</mca:CSharpReference>
+                                  </OutArgument>
+                                </local3:LoginService.OutPut_ResultLogin>
+                              </local3:LoginService>
+                              <If>
+                                <If.Condition>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <mca:CSharpValue x:TypeArguments="x:Boolean">(ResulltLogin[0] == true) &amp;&amp; (ResulltLogin[1] == true)</mca:CSharpValue>
+                                  </InArgument>
+                                </If.Condition>
+                                <If.Then>
+                                  <WriteLine>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <mca:CSharpValue x:TypeArguments="x:String">"Welcome User: " + UserNameArgument +" Password " + PasswordArgument</mca:CSharpValue>
+                                    </InArgument>
+                                  </WriteLine>
+                                </If.Then>
+                                <If.Else>
+                                  <If>
+                                    <If.Condition>
+                                      <InArgument x:TypeArguments="x:Boolean">
+                                        <mca:CSharpValue x:TypeArguments="x:Boolean">ResulltLogin[1] == true</mca:CSharpValue>
+                                      </InArgument>
+                                    </If.Condition>
+                                    <If.Then>
+                                      <WriteLine Text="Password Correct but Username not" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <WriteLine Text="Password and username incorrect" />
+                                    </If.Else>
+                                  </If>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                            <Sequence x:Key="3">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="scg:List(x:String)" Name="myList" />
+                                <Variable x:TypeArguments="x:String" Name="NewString" />
+                                <Variable x:TypeArguments="s:String[]" Name="NewStringArray" />
+                                <Variable x:TypeArguments="x:String" Name="ResultNewForcus" />
+                              </Sequence.Variables>
+                              <WriteLine Text="New forcus Service" />
+                              <WriteLine Text="Please Enter a topic need to search Please enter , at the end" />
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">NewString</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">Console.ReadLine()</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="s:String[]">
+                                    <mca:CSharpReference x:TypeArguments="s:String[]">Topic</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="s:String[]">
+                                    <mca:CSharpValue x:TypeArguments="s:String[]">NewString.Split(',')</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local4:NewForcusService mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+                                <local4:NewForcusService.Input_topic>
+                                  <InArgument x:TypeArguments="s:String[]">
+                                    <mca:CSharpValue x:TypeArguments="s:String[]">Topic</mca:CSharpValue>
+                                  </InArgument>
+                                </local4:NewForcusService.Input_topic>
+                                <local4:NewForcusService.Output_Result>
+                                  <OutArgument x:TypeArguments="s:String[]">
+                                    <mca:CSharpReference x:TypeArguments="s:String[]">ResultTopic</mca:CSharpReference>
+                                  </OutArgument>
+                                </local4:NewForcusService.Output_Result>
+                              </local4:NewForcusService>
+                              <ForEach x:TypeArguments="x:String" DisplayName="ForEach&lt;String&gt;">
+                                <ForEach.Values>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(x:String)">
+                                    <mca:CSharpValue x:TypeArguments="scg:IEnumerable(x:String)">ResultTopic</mca:CSharpValue>
+                                  </InArgument>
+                                </ForEach.Values>
+                                <ActivityAction x:TypeArguments="x:String">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                  </ActivityAction.Argument>
+                                  <WriteLine>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <mca:CSharpValue x:TypeArguments="x:String">item</mca:CSharpValue>
+                                    </InArgument>
+                                  </WriteLine>
+                                </ActivityAction>
+                              </ForEach>
+                            </Sequence>
+                          </Switch>
+                        </If.Then>
+                        <If.Else>
+                          <WriteLine Text="Please enter 1 for Create and 2 for login 3 for Newforcus" />
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:ArgumentException">
+                      <ActivityAction x:TypeArguments="s:ArgumentException">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:ArgumentException" Name="exception" />
+                        </ActivityAction.Argument>
+                        <WriteLine>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">"Error " + exception;</mca:CSharpValue>
+                          </InArgument>
+                        </WriteLine>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+                <WriteLine Text="Do you want to run again ? (1/0)" />
+                <Assign>
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">
+                      <mca:CSharpReference x:TypeArguments="x:Int32">againWhileString</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">
+                      <mca:CSharpValue x:TypeArguments="x:Int32">Int32.Parse(Console.ReadLine())</mca:CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If>
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean">(againWhileString ==1) || (againWhileString ==0)</mca:CSharpValue>
+                    </InArgument>
+                  </If.Condition>
+                  <If.Then>
+                    <If>
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <mca:CSharpValue x:TypeArguments="x:Boolean">againWhileString ==1</mca:CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <If.Then>
+                        <Assign>
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <mca:CSharpReference x:TypeArguments="x:Boolean">againWhile</mca:CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                      <If.Else>
+                        <Assign>
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <mca:CSharpReference x:TypeArguments="x:Boolean">againWhile</mca:CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Else>
+                    </If>
+                  </If.Then>
+                  <If.Else>
+                    <WriteLine Text="Please enterr 1 for yes and 0 for no" />
+                  </If.Else>
+                </If>
+              </Sequence>
+            </While>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </FlowStep.Next>
+          </FlowStep>
+        </Flowchart.StartNode>
+        <x:Reference>__ReferenceID0</x:Reference>
+      </Flowchart>
+      <sads:DebugSymbol.Symbol>d19EOlxDIyBwcm9ncmFtXGNzZTQ0NV9Qcm9qZWN0Ml9hM19OZXdcV29ya2Zsb3dDb25zb2xlQXBwbGljYXRpb25Gb3JBY2NvdW50U2VydmljZVxXb3JrZmxvdzEueGFtbIIBQAPZAw4CAQFCNUI7AgEDQzRDPwIBAkUFRWMDAc4GRgVRKAMBtQZSBVYRAwGoBlcF1wMRAgEERUNFYAMBzwZOC05cAwHCBkkLSVQDAbYGVAlUigEDAakGXgvQAxMCAQViDc8DGAIBFGAPYFgCAQZjD2NfAwGmBmQPlgMaAgF0lwMPlwNyAgFymAMPowMYAgFVpAMPzgMUAgEVY01jXAMBpwZmE4YDHgMBhQGOAxeSAyMCAXWXA02XA28CAXOgAxWgA3ECAWSbAxWbA2oCAVanAxWnA4QBAgEWqwMTyQMYAgEmzAMTzAN6AgEkahVqlgEDAaQGaxV2HgMBhQZ3FYUDGgMBhgGQAxuQA24CAXauAxmuA2wCASeyAxe7AyACAUW+AxfHAyACATXMA1HMA3cCASVqVGqTAQMBpQZzG3N3AwGVBm4bbm0DAYYGeht6lQEDAYcBfhmAAyIDAZgBgwMZgwOWAQMBlgG5A0O5A0cCAVS1Ax21A24CAUbFA0PFA0gCAUTBAx3BA24CATaEAR+EAWkDAZkBhwEb3QEmAwGyBN4BG8ACJgMBzQLBAhv/AiYDAaoBgAEdgAF5AwGoAYMDWIMDkwEDAZcBiAEdiAFxAwGDBokBHYkBfwMBgQaKAR2VASYDAeIFlgEdlgF7AwHgBZcBHaIBJgMBwQWjAR2uAS4DAaIFrwEdugEmAwGDBbsBHcsBNQMB1QTMAR3cASIDAbME3wEd3wFuAwGwBOABHeABfgMBrgThAR3sASYDAY8E7QEd7QGBAQMBjQTuAR35ASYDAe4D+gEdhQIuAwHPA4YCHZECJgMBsAOSAh2iAjMDAYIDowIdvwIiAwHOAsgCHcgCcwMBywLJAh3JAp4BAwHJAsoCHdUCJgMBogLWAh3hAiYDAfsB4gId7QI3AwHUAe4CHf4CJwMBqwGAAVyAAXYDAakBiAFciAFuAwGEBokBXIkBfAMBggaSASOSAXMDAfIFjQEjjQF5AwHjBZYBXJYBeAMB4QWfASOfAXMDAdEFmgEjmgFyAwHCBasBI6sBagMBsgWmASOmAXIDAaMFtwEjtwFqAwGTBbIBI7IBeQMBhAW+ASO+AXYDAfQEyAEjyAFxAwHlBMMBI8MBcQMB1gTPASPPAXYDAbQE0wEh1wEtAwHFBNoBIdoBegMBwwTfAVzfAWsDAbEE4AFc4AF7AwGvBOkBI+kBcwMBnwTkASPkAXkDAZAE7QFc7QF+AwGOBPYBI/YBcwMB/gPxASPxAXIDAe8DggIjggJqAwHfA/0BI/0BcgMB0AOOAiOOAmoDAcADiQIjiQJ5AwGxA58CI58CeAMBoQOVAiOVAnEDAZIDmgIjmgJxAwGDA6YCI6YCoAEDAc8CqgIhrgItAwHyArECIb0CJgMB3gLIAlzIAnADAcwCyQJcyQKbAQMBygLSAiPSAnMDAbYCzQIjzQJyAwGjAt4CI94CdwMBjwLZAiPZAnADAfwB6gIj6gJ2AwHoAeUCI+UCaAMB1QHxAiPxAn0DAcEB+AIh/AItAwGsAdUBJdUBpAEDAcYE2gFg2gF3AwHEBKwCJawCpwEDAfMCtAIntAJ9AwHfArgCJbgCigEDAfACuwIluwKIAQMB7gL6AiX6AmcDAa0BuAJkuAKHAQMB8QK7AmS7AoUBAwHvAg==</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </local:Workflow1.Implementation>
+</local:Workflow1>

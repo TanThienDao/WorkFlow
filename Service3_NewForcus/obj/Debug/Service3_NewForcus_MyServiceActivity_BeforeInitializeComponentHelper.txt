@@ -1,0 +1,2 @@
+MyServiceActivity.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

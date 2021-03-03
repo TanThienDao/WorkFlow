@@ -1,0 +1,79 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="WorkflowConsoleApplicationForAccountService.Crypto.Activities.Encrypt" this:Encrypt.EndpointConfigurationName="BasicHttpBinding_IService2"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:this="clr-namespace:WorkflowConsoleApplicationForAccountService.Crypto.Activities"
+ xmlns:wc="clr-namespace:WorkflowConsoleApplicationForAccountService.Crypto;assembly=WorkflowConsoleApplicationForAccountService, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:wc1="clr-namespace:WorkflowConsoleApplicationForAccountService.Crypto;assembly=WorkflowConsoleApplicationForAccountService"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>BasicHttpBinding_IService2</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="text" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="EncryptResult" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/Encrypt" OperationName="Encrypt" ServiceContractName="p:IService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="wc1:EncryptRequest">[New WorkflowConsoleApplicationForAccountService.Crypto.EncryptRequest() With { .text = text }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/EncryptResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="wc1:EncryptResponse">
+          <VariableReference x:TypeArguments="wc1:EncryptResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="wc1:EncryptResponse" x:Name="__ReferenceID1" Name="tempResult_c102612982f3464e975971d045f00202" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[EncryptResult]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[tempResult_c102612982f3464e975971d045f00202.EncryptResult]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d7MBRDpcQyMgcHJvZ3JhbVxjc2U0NDVfUHJvamVjdDJfYTNfTmV3XFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uRm9yQWNjb3VudFNlcnZpY2VcQ29ubmVjdGVkIFNlcnZpY2VzXENyeXB0b1xXb3JrZmxvd0NvbnNvbGVBcHBsaWNhdGlvbkZvckFjY291bnRTZXJ2aWNlLkNyeXB0by5JU2VydmljZS5FbmNyeXB0LnhhbWwJIANODgIBASUFOQ8CAQo6BUQXAgEHRQVMDgIBAjQ6NJkBAgEMKg8uHwIBCz0LQR8CAQlKMEprAgEFRzFHQAIBAw==</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>

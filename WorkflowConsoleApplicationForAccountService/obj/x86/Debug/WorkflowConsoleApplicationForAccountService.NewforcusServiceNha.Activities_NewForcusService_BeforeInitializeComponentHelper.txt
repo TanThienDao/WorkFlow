@@ -1,0 +1,2 @@
+WorkflowConsoleApplicationForAccountService.NewforcusServiceNha.IService.NewForcusService.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

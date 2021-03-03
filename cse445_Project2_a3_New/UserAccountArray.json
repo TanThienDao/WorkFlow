@@ -1,0 +1,40 @@
+{
+  "UsersArray": [
+    {
+      "username": "test",
+      "password": "test"
+    },
+    {
+      "username": "test2",
+      "password": "test2"
+    },
+    {
+      "username": "test5",
+      "password": "2"
+    },
+    {
+      "username": "test3",
+      "password": "test3"
+    },
+    {
+      "username": "testwithEncrypt",
+      "password": "T+sq0l8rbl8Mkz8zoC3g2A=="
+    },
+    {
+      "username": "testwith1",
+      "password": "skEaTedNxVM="
+    },
+    {
+      "username": "CheckThis",
+      "password": "ue9znnpPQ9g="
+    },
+    {
+      "username": "test444",
+      "password": "test"
+    },
+    {
+      "username": "te",
+      "password": "DY1Wf6HzD+8="
+    }
+  ]
+}

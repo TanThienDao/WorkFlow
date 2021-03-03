@@ -1,0 +1,10 @@
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\bin\cse445_Project2_a3_New.dll.config
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\bin\cse445_Project2_a3_New.dll
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\bin\cse445_Project2_a3_New.pdb
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\bin\Newtonsoft.Json.dll
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\bin\Newtonsoft.Json.xml
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\obj\Debug\cse445_Project2_a3_New.csproj.CoreCompileInputs.cache
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\obj\Debug\cse445_Project2_a3_New.csproj.CopyComplete
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\obj\Debug\cse445_Project2_a3_New.dll
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\obj\Debug\cse445_Project2_a3_New.pdb
+D:\C# program\cse445_Project2_a3_New\cse445_Project2_a3_New\obj\Debug\cse445_Project2_a3_New.csprojAssemblyReference.cache
